@@ -114,6 +114,13 @@ public class PortControl extends VerticalGroup
                             ourRes.wool -= woolNeeded;
                             ourRes.iron -= ironNeeded;
                         }
+                        else
+                        {
+                            Dialog dialog = new Dialog("Insufficient Resources", Assets.getSkin());
+                            dialog.text("Not enough resources to repair " + id.name);
+                            dialog.button("Ok");
+                            dialog.show(getStage());
+                        }
                     }
                 });
                 portDialog.getContentTable().add(repair).center().pad(10);
