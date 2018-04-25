@@ -37,7 +37,7 @@ public class TradeSystem extends IntervalIteratingSystem
             Vector2 theirLocation = Mappers.location.get(partner).coordinates;
             if (ourLocation.dst2(theirLocation) > 100)
             {
-                float newGoodwill = ourGoodwill * 0.8f;
+                float newGoodwill = ourGoodwill * 0.9f;
                 if (newGoodwill < 0.05f)
                 {
                     ourTrade.goodwill.remove(partner, 0f);
