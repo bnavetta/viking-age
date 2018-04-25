@@ -10,6 +10,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.MathUtils;
 import com.bennavetta.vikings.Assets;
 import com.bennavetta.vikings.MonasteryName;
+import com.bennavetta.vikings.ShipName;
 import com.bennavetta.vikings.engine.components.*;
 
 import java.awt.*;
@@ -85,8 +86,7 @@ public class EnemySystem extends EntitySystem
         {
             float x = MathUtils.random(1000);
             float y = MathUtils.random(500);
-            String name = Integer.toHexString(MathUtils.random(1000));
-            Entity ship = Entities.newRaidingShip(engine, name, CombatComponent.Affinity.HOSTILE, x, y);
+            Entity ship = Entities.newRaidingShip(engine, ShipName.generate(), CombatComponent.Affinity.HOSTILE, x, y);
 
             ResourcesComponent res = Mappers.resources.get(ship);
             res.wood = MathUtils.random(1000);

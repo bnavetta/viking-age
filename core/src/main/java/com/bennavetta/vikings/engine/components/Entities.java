@@ -81,7 +81,7 @@ public class Entities
         cc.healthPoints = 70;
         cc.maxHealthPoints = 70;
         cc.attackStrength = 30;
-        cc.defenseStrength = 10;
+        cc.defenseStrength = 7;
 
         return ent;
     }
