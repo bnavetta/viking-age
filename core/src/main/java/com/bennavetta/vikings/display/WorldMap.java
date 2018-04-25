@@ -5,8 +5,6 @@ import com.badlogic.ashley.core.EntityListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Batch;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
@@ -49,10 +47,10 @@ public class WorldMap extends Group implements EntityListener
         batch.setColor(color.r, color.g, color.b, color.a * parentAlpha);
         batch.draw(Assets.getMap(), getX(), getY(), getWidth(), getHeight());
 
-        BitmapFont font = Assets.getSkin().getFont("default-font");
-
-        batch.setColor(Color.BLACK);
-        font.draw(batch, String.format("(%f, %f)", mouseLoc.x, mouseLoc.y), getX() + 30, getY() + 30);
+//        BitmapFont font = Assets.getSkin().getFont("default-font");
+//
+//        batch.setColor(Color.BLACK);
+//        font.draw(batch, String.format("(%.2ff, %.2f)", mouseLoc.x, mouseLoc.y), getX() + 30, getY() + 30);
 
         super.draw(batch, parentAlpha);
     }
