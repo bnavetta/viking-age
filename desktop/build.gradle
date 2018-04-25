@@ -1,0 +1,41 @@
+plugins {
+    id "java"
+}
+
+sourceCompatibility = 1.8
+
+project.ext.mainClassName = "com.bennavetta.vikings.desktop.DesktopLauncher"
+project.ext.assetsDir = project(":core").file("src/main/assets")
+
+task run(dependsOn: classes, type: JavaExec) {
+    main = project.mainClassName
+    classpath = sourceSets.main.runtimeClasspath
+    standardInput = System.in
+    standardOutput = System.out
+    workingDir = project.assetsDir
+    ignoreExitValue = true
+}
+
+task debug(dependsOn: classes, type: JavaExec) {
+    main = project.mainClassName
+    classpath = sourceSets.main.runtimeClasspath
+    standardInput = System.in
+    standardOutput = System.out
+    workingDir = project.assetsDir
+    ignoreExitValue = true
+    debug = true
+}
+
+task dist(type: Jar) {
+    from files(sourceSets.main.output.classesDirs)
+    from files(sourceSets.main.output.resourcesDir)
+    from { configurations.compile.collect { zipTree(it) } }
+    from files(project.assetsDir)
+ 
+    manifest {
+        attributes 'Main-Class': project.mainClassName
+    }
+}
+
+dist.dependsOn classes
+

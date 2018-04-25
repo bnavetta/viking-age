@@ -1,0 +1,66 @@
+{
+  "emporia": [
+    {
+      "name": "Hedeby",
+      "x": 485,
+      "y": 282
+    },
+    {
+      "name": "Birka",
+      "x": 545,
+      "y": 328
+    },
+    {
+      "name": "Dorestad",
+      "x": 432,
+      "y": 249
+    },
+    {
+      "name": "Dublin",
+      "x": 339,
+      "y": 271
+    },
+    {
+      "name": "Constantinople",
+      "x": 664,
+      "y": 123
+    },
+    {
+      "name": "Domburg",
+      "x": 451,
+      "y": 267
+    },
+    {
+      "name": "Novgorod",
+      "x": 647,
+      "y": 330
+    },
+    {
+      "name": "Kiev",
+      "x": 667,
+      "y": 232
+    }
+  ],
+  "towns": [
+    {
+      "name": "London",
+      "x": 389,
+      "y": 249
+    },
+    {
+      "name": "Paris",
+      "x": 414,
+      "y": 209
+    },
+    {
+      "name": "Bremen",
+      "x": 463,
+      "y": 261
+    },
+    {
+      "name": "Rome",
+      "x": 508,
+      "y": 148
+    }
+  ]
+}
