@@ -3,7 +3,6 @@ package com.bennavetta.vikings.engine.components;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.PooledEngine;
 import com.badlogic.gdx.math.MathUtils;
-import com.bennavetta.vikings.engine.systems.Combat;
 
 /**
  * Helpers for creating new entities of common types.
@@ -78,10 +77,10 @@ public class Entities
         ent.add(raid);
 
         CombatComponent cc = Mappers.combat.get(ent);
-        cc.healthPoints = 70;
-        cc.maxHealthPoints = 70;
-        cc.attackStrength = 30;
-        cc.defenseStrength = 7;
+        cc.healthPoints = MathUtils.random(70, 100);
+        cc.maxHealthPoints = cc.healthPoints;
+        cc.attackStrength = MathUtils.random(20, 30);
+        cc.defenseStrength = MathUtils.random(5, 10);
 
         return ent;
     }
@@ -109,10 +108,10 @@ public class Entities
         // You *can* attack an emporium, but it takes a while
         CombatComponent cc = engine.createComponent(CombatComponent.class);
         cc.affinity = CombatComponent.Affinity.NEUTRAL; // won't attack but can be attacked
-        cc.healthPoints = 250;
-        cc.maxHealthPoints = 250;
+        cc.healthPoints = MathUtils.random(200, 300);
+        cc.maxHealthPoints = cc.healthPoints;
         cc.attackStrength = 0;
-        cc.defenseStrength = 5;
+        cc.defenseStrength = MathUtils.random(1, 5);
 
         return ent;
     }
@@ -136,10 +135,10 @@ public class Entities
 
         CombatComponent combat = engine.createComponent(CombatComponent.class);
         combat.affinity = CombatComponent.Affinity.HOSTILE;
-        combat.healthPoints = 150;
-        combat.maxHealthPoints = 150;
+        combat.healthPoints = MathUtils.random(120, 180);
+        combat.maxHealthPoints = combat.healthPoints;
         combat.attackStrength = 0;
-        combat.defenseStrength = 10;
+        combat.defenseStrength = MathUtils.random(5, 10);
         entity.add(combat);
 
         return entity;
@@ -166,10 +165,10 @@ public class Entities
 
         CombatComponent combat = engine.createComponent(CombatComponent.class);
         combat.affinity = CombatComponent.Affinity.HOSTILE;
-        combat.healthPoints = 100;
-        combat.maxHealthPoints = 100;
+        combat.healthPoints = MathUtils.random(70, 120);
+        combat.maxHealthPoints = combat.healthPoints;
         combat.attackStrength = 0;
-        combat.defenseStrength = 5;
+        combat.defenseStrength = MathUtils.random(1, 5);
         entity.add(combat);
 
         return entity;
