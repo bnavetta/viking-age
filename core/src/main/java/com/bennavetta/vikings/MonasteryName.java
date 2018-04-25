@@ -5,18 +5,19 @@ import com.badlogic.gdx.math.MathUtils;
 public class MonasteryName
 {
     private static final String[] NAMES = {
-            "Anne's",
-            "Conant's",
-            "Marius'",
-            "Paul's",
-            "Olaf's",
-            "Margaret's",
-            "Stephen's"
+            "Saint Anne's",
+            "Saint Conant's",
+            "Saint Marius'",
+            "Saint Paul's",
+            "Saint Olaf's",
+            "Saint Margaret's",
+            "Saint Stephen's",
+            "Lindisfarne"
     };
 
     public static String generate()
     {
-        String saint = "Saint " + NAMES[MathUtils.random(NAMES.length-1)];
+        String saint = NAMES[MathUtils.random(NAMES.length-1)];
         float r = MathUtils.random();
         if (r < 0.5)
         {

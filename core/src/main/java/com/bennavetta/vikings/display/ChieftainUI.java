@@ -61,7 +61,7 @@ public class ChieftainUI extends Group implements EntityListener
         curEntity = null;
         controlTable.clearChildren();
         controlTable.center();
-        Label label = new Label("Who knows, my name may yet become\nRenowned far and wide in the end", Assets.getSkin());
+        Label label = new Label("Who knows, my name may yet become\nRenowned far and wide in the end\n- King Harald's Saga", Assets.getSkin());
         label.setAlignment(Align.center);
         controlTable.add(label).center();
     }
