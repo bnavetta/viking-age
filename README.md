@@ -7,6 +7,8 @@ You start at Oseberg, in Norway, with a single ship to your name. From
 there, careful resource management and planning is the only way to survive,
 let alone expand your wealth and power.
 
+[Download here](https://github.com/bnavetta/viking-age/releases/download/v1.0/desktop-1.0.jar)!
+
 ## Gameplay
 
 The map on the screen shows all units in the game, both yours and
