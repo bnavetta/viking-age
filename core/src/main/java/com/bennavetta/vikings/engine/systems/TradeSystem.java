@@ -3,6 +3,7 @@ package com.bennavetta.vikings.engine.systems;
 import com.badlogic.ashley.core.Entity;
 import com.badlogic.ashley.core.Family;
 import com.badlogic.ashley.systems.IntervalIteratingSystem;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
 import com.bennavetta.vikings.engine.components.LocationComponent;
@@ -30,14 +31,14 @@ public class TradeSystem extends IntervalIteratingSystem
 
             TradeComponent ourTrade = Mappers.trade.get(entity);
             TradeComponent theirTrade = Mappers.trade.get(partner);
-            float ourGoodwill = ourTrade.goodwill.get(partner, 0.01f);
-            float theirGoodwill = theirTrade.goodwill.get(entity, 0.01f);
+            float ourGoodwill = ourTrade.goodwill.get(partner, 0.05f);
+            float theirGoodwill = theirTrade.goodwill.get(entity, 0.05f);
 
             Vector2 theirLocation = Mappers.location.get(partner).coordinates;
             if (ourLocation.dst2(theirLocation) > 100)
             {
-                float newGoodwill = ourGoodwill * 0.9f;
-                if (newGoodwill < 0.1f)
+                float newGoodwill = ourGoodwill * 0.8f;
+                if (newGoodwill < 0.05f)
                 {
                     ourTrade.goodwill.remove(partner, 0f);
                 }
@@ -78,7 +79,7 @@ public class TradeSystem extends IntervalIteratingSystem
             }
             else
             {
-                float newGoodwill = Math.max(ourGoodwill * 1.1f, 1f);
+                float newGoodwill = Math.min(ourGoodwill * 1.5f, 1f);
                 ourTrade.goodwill.put(partner, newGoodwill);
             }
         }

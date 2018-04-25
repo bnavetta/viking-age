@@ -103,6 +103,7 @@ public class Entities
         ent.add(resources);
 
         TradeComponent trade = engine.createComponent(TradeComponent.class);
+        trade.friendliness = MathUtils.random();
         ent.add(trade);
 
         // You *can* attack an emporium, but it takes a while

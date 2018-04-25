@@ -47,7 +47,9 @@ public class BuildShipHandler extends ClickListener
             float startY = loc.coordinates.y + MathUtils.random(-10, 10);
 
             Entity ship = Entities.newRaidingShip(engine, ShipName.generate(), CombatComponent.Affinity.PLAYER, startX, startY);
-            ship.add(engine.createComponent(TradeComponent.class));
+            TradeComponent trade = engine.createComponent(TradeComponent.class);
+            trade.friendliness = MathUtils.random();
+            ship.add(trade);
             engine.addEntity(ship);
         }
         else
